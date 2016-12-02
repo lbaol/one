@@ -16,10 +16,15 @@ basics2 = pd.read_csv('../data/2.csv')
 startDate = '2015-03-10'
 endDate ='2015-03-12'
 
-startPrice = ts.get_h_data('002337', start=startDate, end=startDate)
-endPrice = ts.get_h_data('002337', start=endDate, end=endDate)
-print (type(startPrice.open))
-print (pd.DataFrame(endPrice.close))
+startPrice = float(ts.get_h_data('002337', start=startDate, end=startDate).open)
+endPrice = float(ts.get_h_data('002337', start=endDate, end=endDate).close)
+priceRise = (endPrice - startPrice)/startPrice * 100
+
+print(startPrice,endPrice,priceRise)
+priceRise = pd.DataFrame([['002337',startPrice,endPrice,priceRise]],columns=['code','startPrice','endPrice','priceRise'])
+
+
+print (priceRise)
 
 #basics2.columns=['code','name','industry']
 # stocks = pd.merge(basics1, basics2, on=['code','name'], how='left')
