@@ -1,0 +1,189 @@
+/* vue */
+[v-cloak] {
+  display: none;
+}
+
+/* page common setting */
+html {
+	overflow-y: visible;
+}
+
+body , #main , #topbar , #content  {
+	background-color: #fff;
+}
+
+a {
+	text-decoration:none!important;
+}
+
+/* page color */
+
+.panel-tabs.panel-tabs-border > li.active > a {
+	border-top-color:#37bc9b;
+}
+
+/* active panel style */
+.tab-block .tabs-border.nav-tabs > li.active > a{
+    border-top-color:#37bc9b;
+    color: #37bc9b;
+}
+
+.list-result {
+    margin-top: 9.5px;
+    margin-bottom: 9.5px;
+    color: #37bc9b;
+    font-family: inherit;
+    font-weight: 600;
+    line-height: 1.1;
+    font-size: 15px;
+}
+
+/* admindesigns*/
+
+#sidebar_left {
+    top:60px;
+    min-height: 93%;
+}
+
+body, #main , #topbar , #content ,  button, input, select, textarea , label , body .ui-dialog {
+    font-family: Arial,"Microsoft YaHei","\u5FAE\u8F6F\u96C5\u9ED1",STXihei,"\u534E\u6587\u7EC6\u9ED1",sans-serif;
+}
+
+.table-bordered>thead>tr>th {
+	border-bottom-width:1px;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+    max-width: 220px;
+    word-break: break-word;
+    word-wrap: break-word;
+}
+
+
+table {
+	font-size: 13px;
+}
+
+#topbar .breadcrumb {
+	font-size: 13px;
+	padding: 7px 25px 0 0;
+}
+
+.navbar .nav > li > a {
+	padding-top:15px;
+}
+
+
+
+
+/* art dialog */
+
+.ui-dialog .ui-dialog-footer button {
+	border-radius: 0;
+}
+
+.ui-dialog .ui-dialog-footer button.ui-dialog-autofocus ,
+.ui-dialog .ui-dialog-footer button.ui-dialog-autofocus:hover,
+.ui-dialog .ui-dialog-footer button.ui-dialog-autofocus:focus,
+.ui-dialog .ui-dialog-footer button.ui-dialog-autofocus:active {
+	color: #fff;
+    background-color: #37BC9B;
+    border: 1px solid #37BC9B;
+    border-radius: 0;
+}
+
+body .ui-dialog {
+	border-radius: 0;
+}
+
+.msg-confirm-dialog .ui-dialog-body{
+	width: 300px;
+	text-align: left;
+}
+
+body .loading-dialog {
+    border-radius: 5px;
+}
+
+
+.dialog-flipInY {
+    animation-duration: 0.5s;
+    animation-iteration-count:1;
+    animation-fill-mode: both;
+    animation-name: dialogFlipInY;
+}
+
+@keyframes dialogFlipInY {
+    from {
+    transform: perspective(2000px) rotate3d(0, 1, 0, -60deg);
+    }
+
+    to {
+    transform: perspective(2000px);
+    }
+}
+
+/* pnotify */
+.ui-pnotify.stack_bar_top {
+	right: auto;
+    top: 10%;
+    left: auto;
+    margin-left: 30%;
+    bottom: auto;
+    border-radius: 0;
+}
+
+.form-control:focus{
+  border-color:  #37BC9B;
+}
+
+/* loading */
+
+.proloading {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.proloading:before,.proloading:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content:'';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #37bc9b;
+    opacity: 0.6;
+    list-style-type: none;
+
+    -webkit-animation: bounce 2.0s infinite ease-in-out;
+    animation: bounce 2.0s infinite ease-in-out;
+}
+
+.proloading:before {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+
+@-webkit-keyframes bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 50% {
+          transform: scale(1.0);
+          -webkit-transform: scale(1.0);
+      }
+}

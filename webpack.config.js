@@ -6,11 +6,17 @@ module.exports = {
         filename: 'build.js'
     },
     module: {
-        loaders: [{
+        loaders: [
+        {
+        	test: /\.json$/,
+        	loader: "json"
+      	},
+      	{
             test: /\.js$/,
             loader: 'babel',
             exclude: /node_modules/
-        }, {
+        }, 
+        {
             test: /\.vue$/,
             loader: 'vue'
         }]

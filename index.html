@@ -4,10 +4,29 @@
 <head>
     <meta charset="utf-8">
     <title>Vue Example</title>
+    <link rel="stylesheet" type="text/css" href="dist/theme.css">
+    <link rel="stylesheet" type="text/css" href="dist/page.css">
 </head>
 
 <body>
-    <div>{{message}}</div>
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>代码</th>
+          <th>名称</th>
+          <th>涨幅</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="stock in stocks">
+          <td>{{stock.code}}</td>
+          <td>{{stock.name}}</td>
+          <td>{{stock.涨跌幅度}}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
     <script src="dist/build.js"></script>
 </body>
 
