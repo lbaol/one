@@ -17,18 +17,25 @@
 </head>
 
 <body>
-	<div class="mb20">
+	<div class="mt20 mb20">
 		<form class="form-inline" >
-		  <div class="form-group">
-		    <label  >股价强度</label>
-		    <input  class="form-control"  v-model="priceStrength"  placeholder="股价强度" >
+		  <div class="form-group mr10">
+		    <label  >近一年强度 >=</label>
+		    <input  class="form-control input-sm mw50"  v-model="priceStrength"  placeholder="" >
 		  </div>
-		  <div class="form-group">
-		    <label >利润强度</label>
-		    <input  class="form-control"  v-model="profitStrength"  placeholder="利润强度" >
+      <div class="form-group mr10">
+        <label  >近半年强度 >=</label>
+        <input  class="form-control input-sm mw50"  v-model="halfPriceStrength"  placeholder="" >
+      </div>
+		  <div class="form-group mr10">
+		    <label >利润强度 >=</label>
+		    <input  class="form-control input-sm mw50"  v-model="profitStrength"  placeholder="" >
 		  </div>
-		  
-		  <button  @click.prevent="filter" class="btn btn-primary">筛选</button>
+		  <div class="form-group mr10">
+        <label >市值小于 <= </label>
+        <input  class="form-control input-sm mw50"  v-model="capitalisation"  placeholder="" >
+      </div>
+		  <button  @click.prevent="filter" class="btn btn-primary btn-sm">筛选</button>
 		</form>
 	</div>
     <table id="main-table" class="table table-hover table-bordered">
@@ -36,20 +43,30 @@
         <tr>
           <th>代码</th>
           <th>名称</th>
-          <th>近一年涨幅</th>
-          <th>股价强度</th>
+          <th>行业</th>
+          <th>年涨幅</th>
+          <th>年强度</th>
+          <th>半年涨幅</th>
+          <th>半年强度</th>
           <th>利润同比</th>
           <th>利润强度</th>
+          <th>上市时间</th>
+          <th>市值</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(index,stock) in stocks" track-by="$index">
+        <tr v-for="(index,stock) in stocks" >
           <td>{{stock.code}}</td>
           <td>{{stock.name}}</td>
+          <td>{{stock.industry}}</td>
           <td>{{stock.涨跌幅度}}</td>
           <td>{{stock.priceStrength}}</td>
+          <td>{{stock.半年涨跌幅度}}</td>
+          <td>{{stock.halfPriceStrength}}</td>
           <td>{{stock.profit}}</td>
           <td>{{stock.profitStrength}}</td>
+          <td>{{stock.timeToMarket}}</td>
+          <td>{{stock.capitalisation}}</td>
         </tr>
       </tbody>
     </table>
